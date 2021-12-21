@@ -25,7 +25,7 @@ export class WishlistButtonComponent {
       },
       (error: Response) => {
         console.log(error);
-        alert('Transaction failed. Please try again later.');
+        alert('Custom Component: Failed to fetch article popularity.');
       }
     );
   }
