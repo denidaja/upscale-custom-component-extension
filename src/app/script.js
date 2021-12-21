@@ -16,11 +16,11 @@ window.addEventListener(
     if (event.data) {
       switch (event.data.eventType) {
         case "component_context":
-          clickedProduct.onlineShopID = event.data.keys.experienceID;
+          clickedProduct.onlineShopID = event.data.keys["experienceId"];
           break;
         case "product_detail_component_init":
-          clickedProduct.productID = event.data.keys.productID;
-          clickedProduct.productName = event.data.keys.productName;
+          clickedProduct.productID = event.data.keys["product.id"];
+          clickedProduct.productName = event.data.keys["product.name"];
           break;
         default:
           break;
