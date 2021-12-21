@@ -12,6 +12,7 @@ export const clickedProduct = {
 window.addEventListener(
   "message",
   (event) => {
+    console.log("Received event:", event);
     if (event.data) {
       switch (event.data.eventType) {
         case "component_context":
