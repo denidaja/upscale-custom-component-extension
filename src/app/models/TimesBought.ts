@@ -1,0 +1,3 @@
+class TimesBought {
+  quantity: any;
+}
