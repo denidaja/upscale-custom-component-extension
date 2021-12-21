@@ -60,13 +60,9 @@ module.exports = __webpack_require__(/*! /Users/I536116/Desktop/upscale-layered-
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "clickedProduct", function() { return clickedProduct; });
-/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../environments/environment */ "AytR");
-
-
 sendStartupEvents();
 
 const clickedProduct = {
-  systemID: _environments_environment__WEBPACK_IMPORTED_MODULE_0__["environment"].systemID,
   onlineShopID: "",
   productID: "",
   productName: "",
@@ -78,13 +74,19 @@ window.addEventListener(
     console.log("Received event:", event);
     if (event.data) {
       switch (event.data.eventType) {
-        case "component_context":
+        case "component_context": {
+          console.log("component_context", event.data);
+          console.log(event.data.keys["experienceId"]);
           clickedProduct.onlineShopID = event.data.keys["experienceId"];
           break;
-        case "product_detail_component_init":
+        }
+        case "product_detail_component_init": {
+          console.log("product_detail_component_init", event.data);
+          console.log(event.data.keys["product.id"]);
           clickedProduct.productID = event.data.keys["product.id"];
           clickedProduct.productName = event.data.keys["product.name"];
           break;
+        }
         default:
           break;
       }

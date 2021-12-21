@@ -1,9 +1,6 @@
-import { environment } from "../environments/environment";
-
 sendStartupEvents();
 
 export const clickedProduct = {
-  systemID: environment.systemID,
   onlineShopID: "",
   productID: "",
   productName: "",
@@ -15,13 +12,19 @@ window.addEventListener(
     console.log("Received event:", event);
     if (event.data) {
       switch (event.data.eventType) {
-        case "component_context":
+        case "component_context": {
+          console.log("component_context", event.data);
+          console.log(event.data.keys["experienceId"]);
           clickedProduct.onlineShopID = event.data.keys["experienceId"];
           break;
-        case "product_detail_component_init":
+        }
+        case "product_detail_component_init": {
+          console.log("product_detail_component_init", event.data);
+          console.log(event.data.keys["product.id"]);
           clickedProduct.productID = event.data.keys["product.id"];
           clickedProduct.productName = event.data.keys["product.name"];
           break;
+        }
         default:
           break;
       }
