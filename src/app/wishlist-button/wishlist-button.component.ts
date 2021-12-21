@@ -22,9 +22,9 @@ export class WishlistButtonComponent implements OnInit {
 
   getData() {
     this.service.getTimesBought(clickedProduct.productID).subscribe(
-      (data: TimesBought) => {
+      (data) => {
         setTimeout(() => {
-          this.timesBought = data.quantity;
+          this.timesBought = data['quantity'];
         }, 0);
       },
       (error: Response) => {
