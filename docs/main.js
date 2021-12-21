@@ -177,6 +177,7 @@ class WishlistButtonComponent {
     }
     getData() {
         this.service.getTimesBought(_script_js__WEBPACK_IMPORTED_MODULE_1__["clickedProduct"].productID).subscribe((data) => {
+            console.log(data);
             setTimeout(() => {
                 this.timesBought = data['quantity'];
             }, 0);

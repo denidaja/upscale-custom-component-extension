@@ -23,6 +23,7 @@ export class WishlistButtonComponent implements OnInit {
   getData() {
     this.service.getTimesBought(clickedProduct.productID).subscribe(
       (data) => {
+        console.log(data);
         setTimeout(() => {
           this.timesBought = data['quantity'];
         }, 0);
