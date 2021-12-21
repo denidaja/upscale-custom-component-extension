@@ -173,8 +173,10 @@ class WishlistButtonComponent {
         this.timesBought = null;
     }
     ngOnInit() {
-        console.log('Received data:', _script_js__WEBPACK_IMPORTED_MODULE_1__["clickedProduct"]);
-        this.getData();
+        setTimeout(() => {
+            console.log('Received data:', _script_js__WEBPACK_IMPORTED_MODULE_1__["clickedProduct"]);
+            this.getData();
+        }, 500);
     }
     getData() {
         this.service.getTimesBought(_script_js__WEBPACK_IMPORTED_MODULE_1__["clickedProduct"].productID).subscribe((data) => {
