@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 
 import { WishlistService } from '../services/wishlist.service.js';
 import { clickedProduct } from '../script.js';
-import { TimesBought } from '../models/TimesBought.js';
 
 @Component({
   selector: 'app-wishlist-button',
@@ -23,9 +22,10 @@ export class WishlistButtonComponent implements OnInit {
   getData() {
     this.service.getTimesBought(clickedProduct.productID).subscribe(
       (data) => {
-        console.log(data);
+        let parsedData = JSON.parse(JSON.stringify(data));
+        console.log(parsedData);
         setTimeout(() => {
-          this.timesBought = data['quantity'];
+          this.timesBought = parsedData['quantity'];
         }, 0);
       },
       (error: Response) => {
