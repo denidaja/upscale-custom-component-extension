@@ -171,6 +171,9 @@ class WishlistButtonComponent {
     constructor(service) {
         this.service = service;
         this.timesBought = null;
+    }
+    ngOnInit() {
+        console.log('Received data:', _script_js__WEBPACK_IMPORTED_MODULE_1__["clickedProduct"]);
         this.getData();
     }
     getData() {
