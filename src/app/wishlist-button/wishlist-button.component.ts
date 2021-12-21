@@ -16,7 +16,6 @@ export class WishlistButtonComponent implements OnInit {
 
   ngOnInit() {
     setTimeout(() => {
-      console.log('Received data:', clickedProduct);
       this.getData();
     }, 500);
   }

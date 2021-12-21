@@ -23,7 +23,7 @@ class WishlistService {
         this.apiEndpoint = _environments_environment__WEBPACK_IMPORTED_MODULE_0__["environment"].apiEndpoint;
     }
     getTimesBought(productID) {
-        return this.http.get(this.apiEndpoint + `?productID=${productID}`);
+        return this.http.get(this.apiEndpoint + `?productID="${productID}"`);
     }
 }
 WishlistService.ɵfac = function WishlistService_Factory(t) { return new (t || WishlistService)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"])); };
@@ -75,14 +75,10 @@ window.addEventListener(
     if (event.data) {
       switch (event.data.eventType) {
         case "component_context": {
-          console.log("component_context", event.data);
-          console.log(event.data.keys["experienceId"]);
           clickedProduct.onlineShopID = event.data.keys["experienceId"];
           break;
         }
         case "product_detail_component_init": {
-          console.log("product_detail_component_init", event.data);
-          console.log(event.data.keys["product.id"]);
           clickedProduct.productID = event.data.keys["product.id"];
           clickedProduct.productName = event.data.keys["product.name"];
           break;
@@ -176,7 +172,6 @@ class WishlistButtonComponent {
     }
     ngOnInit() {
         setTimeout(() => {
-            console.log('Received data:', _script_js__WEBPACK_IMPORTED_MODULE_1__["clickedProduct"]);
             this.getData();
         }, 500);
     }
@@ -307,7 +302,7 @@ class WishlistService {
         this.apiEndpoint = _environments_environment__WEBPACK_IMPORTED_MODULE_0__["environment"].apiEndpoint;
     }
     getTimesBought(productID) {
-        return this.http.get(this.apiEndpoint + `?productID=${productID}`);
+        return this.http.get(this.apiEndpoint + `?productID="${productID}"`);
     }
 }
 WishlistService.ɵfac = function WishlistService_Factory(t) { return new (t || WishlistService)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"])); };
