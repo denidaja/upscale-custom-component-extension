@@ -23,7 +23,7 @@ class WishlistService {
         this.apiEndpoint = _environments_environment__WEBPACK_IMPORTED_MODULE_0__["environment"].apiEndpoint;
     }
     getTimesBought(productID) {
-        return this.http.get(this.apiEndpoint + `?productID="${productID}"`);
+        return this.http.get(this.apiEndpoint + `?productId=${productID}`);
     }
 }
 WishlistService.ɵfac = function WishlistService_Factory(t) { return new (t || WishlistService)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"])); };
@@ -302,7 +302,7 @@ class WishlistService {
         this.apiEndpoint = _environments_environment__WEBPACK_IMPORTED_MODULE_0__["environment"].apiEndpoint;
     }
     getTimesBought(productID) {
-        return this.http.get(this.apiEndpoint + `?productID="${productID}"`);
+        return this.http.get(this.apiEndpoint + `?productId=${productID}`);
     }
 }
 WishlistService.ɵfac = function WishlistService_Factory(t) { return new (t || WishlistService)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"])); };

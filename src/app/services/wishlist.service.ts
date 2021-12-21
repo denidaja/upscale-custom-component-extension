@@ -11,6 +11,6 @@ export class WishlistService {
   constructor(private http: HttpClient) {}
 
   getTimesBought(productID: any) {
-    return this.http.get(this.apiEndpoint + `?productID="${productID}"`);
+    return this.http.get(this.apiEndpoint + `?productId=${productID}`);
   }
 }
