@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { WishlistService } from '../services/wishlist.service.js';
 import { clickedProduct } from '../script.js';
@@ -9,10 +9,13 @@ import { TimesBought } from '../models/TimesBought.js';
   templateUrl: './wishlist-button.component.html',
   styleUrls: ['./wishlist-button.component.css'],
 })
-export class WishlistButtonComponent {
+export class WishlistButtonComponent implements OnInit {
   timesBought = null;
 
-  constructor(private service: WishlistService) {
+  constructor(private service: WishlistService) {}
+
+  ngOnInit() {
+    console.log('Received data:', clickedProduct);
     this.getData();
   }
 
