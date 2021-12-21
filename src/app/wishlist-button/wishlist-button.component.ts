@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 
 import { WishlistService } from '../services/wishlist.service.js';
 import { clickedProduct } from '../script.js';
+import { TimesBought } from '../models/TimesBought.js';
 
 @Component({
   selector: 'app-wishlist-button',

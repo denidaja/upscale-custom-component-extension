@@ -1,3 +1,3 @@
-class TimesBought {
+export class TimesBought {
   quantity: any;
 }
