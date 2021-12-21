@@ -23,7 +23,6 @@ export class WishlistButtonComponent implements OnInit {
     this.service.getTimesBought(clickedProduct.productID).subscribe(
       (data) => {
         let parsedData = JSON.parse(JSON.stringify(data));
-        console.log(parsedData['quantity']);
         setTimeout(() => {
           this.timesBought = parsedData['quantity'];
         }, 0);
